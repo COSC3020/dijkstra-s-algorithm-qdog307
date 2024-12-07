@@ -26,7 +26,7 @@ answer, including your reasoning, to this markdown file.
 
 ## Sources 
 
-For this I used the pseudocode that was provided. I used geeks for geeks https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/ to get an idea on runtime analysis and the code. I used https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php for more understanding. I used ChatGPT for the test code and setting up the actions workflow to constanly test newly uploaded code. 
+For this I used the pseudocode that was provided. I used geeks for geeks https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/ to get an idea on runtime analysis and the code. I used https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php for more understanding. I used ChatGPT for the test code and setting up the actions workflow to constanly test newly uploaded code. I also asked about the change in runtime that sorting would invovle. 
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
@@ -34,9 +34,9 @@ I certify that I have listed all sources used to complete this exercise, includi
 
 The algorithm processes the graph by iterating through all vertices, represented by `n`. During the initialization step, the algorithm sets the distances to all `n` vertices to infinity (`∞`), which takes `Θ(n)`. This prepares the graph for the main processing loop.
 
-In the main loop, the algorithm iterates through each unvisited vertex and selects the one with the smallest distance. Since the priority queue is implemented as a simple array, finding the smallest element requires a worst-case runtime of `Θ(n)` per iteration. This selection process is repeated for all `n` vertices, resulting in a total runtime for vertex selection of `Θ(n^2)`.
+In the main loop, the algorithm iterates through each unvisited vertex and selects the one with the smallest distance. Since the priority queue is implemented as a simple array, finding the smallest element requires a worst-case runtime of `O(n log n)` per iteration. This selection process is repeated for all `n` vertices, resulting in a total runtime for vertex selection of `Θ(n^2 log n)`.
 
-For each vertex, the algorithm iterates over its neighbors to relax the edges. As there are `E` total edges in the graph, the edge relaxation step runs in `Θ(E)`. 
+For each vertex, the algorithm iterates over its neighbors to relax the edges. As there are `E` total edges in the graph, the edge relaxation step runs in `Θ(E)`.
 
-Combining these components, the overall runtime complexity of the algorithm is `Θ(n^2 + E)`. 
+Combining these components, the overall runtime complexity of the algorithm is `Θ(n^2 log n + E)`.
 
